@@ -1,0 +1,31 @@
+NAME
+    Catalyst::Plugin::Email::Japanese - Send Japanese emails with Catalyst
+
+SYNOPSIS
+      use Catalyst qw/Email::Japanese/;
+
+      __PACKAGE__->config->{email} = {
+          Template => 'email.tt',
+          From => 'typester@cpan.org',
+      };
+
+      $c->email(
+          To => 'typester@gmail.com',
+          Subject => 'Hi!',
+      );
+
+DESCRIPTION
+    Send emails with Catalyst and MIME::Lite::TT::Japanese.
+
+  METHODS
+   email
+SEE ALSO
+    Catalyst, Catalyst::Plugin::Email, MIME::Lite::TT::Japanese.
+
+AUTHOR
+    Daisuke Murase, <typester@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
