@@ -1,7 +1,12 @@
+Build.PL
 Changes
+lib/Catalyst/Plugin/Email/Japanese.pm
+LICENSE
 Makefile.PL
 MANIFEST
+META.yml
 README
-t/Catalyst-Plugin-Email-Japanese.t
-lib/Catalyst/Plugin/Email/Japanese.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+t/001_load.t
+t/002_pod.t
+t/003_podcoverage.t
+Todo

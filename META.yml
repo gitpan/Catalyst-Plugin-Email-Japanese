@@ -1,12 +1,18 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Catalyst-Plugin-Email-Japanese
-version:      0.01
-version_from: lib/Catalyst/Plugin/Email/Japanese.pm
-installdirs:  site
+---
+name: Catalyst-Plugin-Email-Japanese
+version: 0.02
+author:
+  - 'Daisuke Murase <typester@cpan.org>'
+abstract: Send Japanese emails with Catalyst
+license: perl
 requires:
-    Catalyst:                      5.30
-    MIME::Lite::TT::Japanese:      0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.17
+  Catalyst: 5.0
+  MIME::Lite::TT::HTML::Japanese: 0.05
+  MIME::Lite::TT::Japanese: 0
+recommends:
+  Template::Provider::Encoding: 0
+provides:
+  Catalyst::Plugin::Email::Japanese:
+    file: lib/Catalyst/Plugin/Email/Japanese.pm
+    version: 0.02
+generated_by: Module::Build version 0.2611

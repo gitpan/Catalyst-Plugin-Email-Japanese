@@ -1,3 +1,8 @@
+Revision history for Perl module Catalyst::Plugin::Email::Japanese
 
-0.01  2005-08-09
-	- Initial Release
+0.02 2006-03-06T23:35:03+09:00
+     - added ForceUTF8 support
+     - added HTML Mail support
+
+0.01 2005-08-09T00:00:00+09:00
+     - Initial Release
