@@ -1,5 +1,8 @@
 Revision history for Perl module Catalyst::Plugin::Email::Japanese
 
+0.04 2006-03-13T15:01:00+09:00
+     - fixed META.yml
+
 0.03 2006-03-13T14:53:30+09:00
      - Minor two fixes
        - fixed PREREQ_PM
