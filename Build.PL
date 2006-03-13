@@ -7,7 +7,7 @@ Module::Build->new(
     requires    => {
         'MIME::Lite::TT::Japanese'       => 0,
         'MIME::Lite::TT::HTML::Japanese' => '0.05',
-        Catalyst                         => '5.0',
+        Catalyst                         => '5.30',
     },
     recommends => { 'Template::Provider::Encoding' => 0, },
 )->create_build_script;

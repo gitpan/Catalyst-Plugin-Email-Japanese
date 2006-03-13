@@ -22,8 +22,8 @@ DESCRIPTION
     Send emails with Catalyst and MIME::Lite::TT::Japanese.
 
 ForceUTF8 MODE
-    If "$c-"config->{ForceUTF8}> or "$c-"config->{email}->{ForceUTF8} is
-    true value, this module use Template::Provider::Encoding and
+    If $c->config->{ForceUTF8} or $c->config->{email}->{ForceUTF8} is true
+    value, this module use Template::Provider::Encoding and
     Template::Stash::ForceUTF8 for correct utf-8 handling.
 
     Please see these module's docs for detail.

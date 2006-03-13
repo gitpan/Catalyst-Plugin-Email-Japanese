@@ -5,7 +5,7 @@ use strict;
 use Catalyst::Exception;
 use UNIVERSAL::require
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -35,7 +35,7 @@ Send emails with Catalyst and L<MIME::Lite::TT::Japanese>.
 
 =head1 ForceUTF8 MODE
 
-If C<$c->config->{ForceUTF8}> or C<$c->config->{email}->{ForceUTF8} is true value,
+If $c->config->{ForceUTF8} or $c->config->{email}->{ForceUTF8} is true value,
 this module use L<Template::Provider::Encoding> and L<Template::Stash::ForceUTF8> for correct utf-8 handling.
 
 Please see these module's docs for detail.
