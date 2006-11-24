@@ -1,10 +1,12 @@
 ---
 name: Catalyst-Plugin-Email-Japanese
-version: 0.04
+version: 0.05
 author:
   - 'Daisuke Murase <typester@cpan.org>'
 abstract: Send Japanese emails with Catalyst
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   Catalyst: 5.30
   MIME::Lite::TT::HTML::Japanese: 0.05
@@ -14,5 +16,8 @@ recommends:
 provides:
   Catalyst::Plugin::Email::Japanese:
     file: lib/Catalyst/Plugin/Email/Japanese.pm
-    version: 0.04
-generated_by: Module::Build version 0.2612
+    version: 0.05
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

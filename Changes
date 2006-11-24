@@ -1,5 +1,8 @@
 Revision history for Perl module Catalyst::Plugin::Email::Japanese
 
+0.05 2006-11-24T15:39:51+09:00
+     - added INCLUDE_PATH configuration support
+
 0.04 2006-03-13T15:01:00+09:00
      - fixed META.yml
 
