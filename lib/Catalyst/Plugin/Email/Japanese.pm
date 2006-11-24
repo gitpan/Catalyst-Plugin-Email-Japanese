@@ -5,7 +5,7 @@ use strict;
 use Catalyst::Exception;
 use UNIVERSAL::require
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 =head1 NAME
 
@@ -108,7 +108,7 @@ sub email {
         %{ $args->{TmplParams} || {} },
     };
 
-    $module->new(
+    my $msg = $module->new(
         %{$c->config->{email} || {} },
         %{$args || {} },
         Template => $template,
@@ -116,7 +116,37 @@ sub email {
         TmplOptions => $options,
         Icode => $args->{Icode} || $c->config->{email}->{Icode} || 'utf8',
         LineWidth => $args->{LineWidth} || $c->config->{email}->{LineWidth} || 0,
-    )->send;
+    );
+
+    my $route = $c->config->{email}->{mailroute} || { via => 'smtp', host => 'localhost' };
+    $route->{via} ||= 'smtp';
+
+    eval {
+        if ( $route->{via} eq 'smtp_tls' ) {
+            $msg->send_by_smtp_tls(
+                $route->{host},
+                User     => $route->{username},
+                Password => $route->{password},
+                Port     => $route->{port} || 587,
+            );
+        }
+        elsif ( $route->{via} eq 'sendmail' ) {
+            my %param;
+            $param{FromSender} = '<' . $c->config->{email}->{mailfrom} . '>' if $c->config->{email}->{mailfrom};
+            $param{Sendmail} = $route->{command} if defined $route->{command};
+            $msg->send( 'sendmail', %param );
+        }
+        else {
+            my @args = $route->{host} ? ( $route->{host} ) : ();
+            $msg->send( $route->{via}, @args );
+        }
+    };
+
+    if ($@) {
+        Catalyst::Exception->throw( message => "Error while sending emails: $@" )
+    }
+
+    1;
 }
 
 =head1 SEE ALSO
