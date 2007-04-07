@@ -1,5 +1,8 @@
 Revision history for Perl module Catalyst::Plugin::Email::Japanese
 
+0.07 2007-04-07T17:51:34+09:00
+     - fixed a bug deleting original INCLUDE_PATH config
+
 0.06 2006-11-24T19:53:16+09:00
      - added mailroute configuration support
        (Thanks to Takeda Akihito)

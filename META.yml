@@ -1,6 +1,6 @@
 ---
 name: Catalyst-Plugin-Email-Japanese
-version: 0.06
+version: 0.07
 author:
   - 'Daisuke Murase <typester@cpan.org>'
 abstract: Send Japanese emails with Catalyst
@@ -16,8 +16,8 @@ recommends:
 provides:
   Catalyst::Plugin::Email::Japanese:
     file: lib/Catalyst/Plugin/Email/Japanese.pm
-    version: 0.06
-generated_by: Module::Build version 0.2805
+    version: 0.07
+generated_by: Module::Build version 0.2806
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

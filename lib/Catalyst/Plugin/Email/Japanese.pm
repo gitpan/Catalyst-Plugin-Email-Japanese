@@ -5,7 +5,7 @@ use strict;
 use Catalyst::Exception;
 use UNIVERSAL::require
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 =head1 NAME
 
@@ -79,16 +79,17 @@ sub email {
         or Catalyst::Exception->throw(
             message => qq/Couldn't load $module, "$!"/ );
 
-    my $include_path
-        = delete $c->config->{email}->{TmplOptions}->{INCLUDE_PATH}
-        || $c->view->config->{INCLUDE_PATH}
-        || [ $c->config->{root}, $c->config->{root} . '/base' ];
-
     my $options = {
         EVAL_PERL => 0,
         %{ $c->config->{email}->{TmplOptions} || {} },
         %{ $args->{TmplOptions} || {} },
     };
+
+    my $include_path
+        = delete $options->{INCLUDE_PATH}
+        || $c->view->config->{INCLUDE_PATH}
+        || [ $c->config->{root}, $c->config->{root} . '/base' ];
+
     if ( $c->config->{ForceUTF8} or $c->config->{email}{ForceUTF8} || $args->{ForceUTF8} ) {
         $_->require
             || Catalyst::Exception->throw( message => $! )
